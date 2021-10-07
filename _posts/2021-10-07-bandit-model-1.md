@@ -30,29 +30,27 @@ $$ E[u \mid x_1, x_2, ..., x_n]=\frac{\sigma_u^2 \bar{x}}{\sigma_u^2+{\frac {\si
 ## Conditional Expectation
 For any normally distributed random variable $$z$$, 
 
-$$ E[z \mid z>0]=u_z+\sigma_z \frac {\phi(a)}{1-\Phi(a)} $$, 
+$$ E[z \mid z>0]=u_z+\sigma_z \frac {\phi(a)}{1-\Phi(a)} $$
 
 where $$\phi(\cdot)$$ is the probability density function of a standard normal distribution $$N(0,1)$$, $$\Phi(\cdot)$$ is the cumulative density function, and $$a=-\frac {u_z}{\sigma_z}$$.
 
 Proof:
 
-$$ E[z /mid z>0]= \frac {\int_{0}^{+\infty} zf_z(z)dz}{p(z>0)} = \frac {\int_{-\infty}^{+\infty} zf_z(z)dz - \int_{-\infty}^{0} zf_z(z)dz}{p(z>0)} $$
+$$ E[z \mid z>0]= \frac {\int_{0}^{+\infty} zf_z(z)dz}{p(z>0)} = \frac {\int_{-\infty}^{+\infty} zf_z(z)dz - \int_{-\infty}^{0} zf_z(z)dz}{p(z>0)} $$
 
-Let's look at each component. First, $$ \int_{-\infty}^{+\infty} zf_z(z)dz = u_z $$
+Let's look at each component individually. First, $$ \int_{-\infty}^{+\infty} zf_z(z)dz = u_z $$.
 
-Second, let $$ t= \frac {z-u_z}{\sigma_z} $$, i.e., standardize z, we get 
-
-$$ p(z>0) = p(t>\frac {z-u_z}{\sigma_z}) = p(t>a) = 1-\Phi(a) $$
+Second, let $$ t= \frac {z-u_z}{\sigma_z} $$, i.e., standardize z, we get $$ p(z>0) = p(t>\frac {z-u_z}{\sigma_z}) = p(t>a) = 1-\Phi(a) $$.
 
 Finally, 
 
-$$ \int_{-\infty}^{0} zf_z(z)dz = \int_{-\infty}^{a} (t\sigma_z+u_z)f_t(t)dt $$
+$$ \int_{-\infty}^{0} zf_z(z)dz = \int_{-\infty}^{a} (t\sigma_z+u_z)f_t(t)dt $$ &nbsp;
 
-$$ = \int_{-\infty}^{a} t\sigma_zf_t(t)dt + \int_{-\infty}^{a} u_zf_t(t)dt $$
+$$ = \int_{-\infty}^{a} t\sigma_zf_t(t)dt + \int_{-\infty}^{a} u_zf_t(t)dt $$ &nbsp;
 
-$$ = -\sigma_z \int_{-\infty}^{a} f'_t(t)dt + u_z \int_{-\infty}^{a} f_t(t)dt $$
+$$ = -\sigma_z \int_{-\infty}^{a} f'_t(t)dt + u_z \int_{-\infty}^{a} f_t(t)dt $$ &nbsp;
 
-$$ = -sigma_z\phi(a)+u_z\Phi(a) $$
+$$ = -\sigma_z\phi(a)+u_z\Phi(a) $$ &nbsp;
 
 Here, I used a special property of standard normal distribution: $$ tf_t(t)=-f'(t) $$. This can be easily proved by writing out the PDF of the standard normal distribution. 
 
