@@ -21,17 +21,23 @@ $$ \sigma^2=(\frac {1}{\sigma_u^2} + \frac {1}{\frac {\sigma_e^2}n})^{-1} $$
 
 $$ \mu=\sigma^2(\frac{\mu_u}{\sigma_u^2} +\frac {\bar{x}}{\frac {\sigma_e^2}{n}}) $$
 
-where $$\mu_u=0$$, $$\bar{x}$$ is the average value of the n signals observed, and we have $${\sigma_e^2}$$ in the formula because $$ E[x_i|u] \sim N(u, \sigma_e)$$.
+where $$\mu_u=0$$, $$\bar{x}$$ is the average value of the n signals observed, and we have $${\sigma_e^2}$$ in the formula because $$ E[X_i|u] \sim N(u, \sigma_e) $$.
 
 So, after observing n signals $$x_1, x_2, ..., x_n$$, the best estimate of $$u$$ is:
 
 $$ E[u|x_1, x_2, ..., x_n]=\frac{\sigma_u^2 \bar{x}}{\sigma_u^2+{\frac {\sigma_e^2}n}} $$
 
 ## Conditional Expectation
-For any normally distributed random variable z, $$ E[z|z>0]=u_z+\sigma_z \frac {\phi(a)}{1-\Phi(a)} $$, where \phi() is the probability density function of a standard normal distribution $$N(0,1)$$, and $$a=\frac {-u_z}{\sigma_z}$$.
+For any normally distributed random variable $$z$$, 
+
+$$ E[z|z>0]=u_z+\sigma_z \frac {\phi(a)}{1-\Phi(a)} $$, 
+
+where $$\phi()$$ is the probability density function of a standard normal distribution $$N(0,1)$$, and $$a=-\frac {u_z}{\sigma_z}$$.
 
 Proof:
-$$ E[z|z>0]= \frac {\int_{z=0}^{+\infty} zf_z(z)dz}{p(z>0)} $$
+
+$$ E[z|z>0]= \frac {\int_{0}^{+\infty} zf_z(z)dz}{p(z>0)} $$
+
 $$ = \frac {\int_{z=-\infty}^{+\infty} zf_z(z)dz - \int_{z=-\infty}^{0} zf_z(z)dz}{p(z>0)}
 
 
