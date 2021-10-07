@@ -13,10 +13,14 @@ Assuming there are n periods. In each period t, the payoff is $ X_i=u+e_{i,t} $ 
 So, after observing n signals $x_1, x_2, ..., x_n$, the best estimate of $u$ is:
 $$ E[u|x_1, x_2, ..., x_n]=\frac {{\sigma_u^2}(x_1+x_2+...+x_n)}{{\sigma_u^2}+{\frac {\sigma_e^2}N}} $$
 
-To arrive this formula, I relied on the formula from the note [Bayesian Inference for the Normal Distribution](http://www.ams.sunysb.edu/~zhu/ams570/Bayesian_Normal.pdf). The posterior distribution of $u$ with a sample size of n has the following property:
+The above expected value can be derived from the formula on the note [Bayesian Inference for the Normal Distribution](http://www.ams.sunysb.edu/~zhu/ams570/Bayesian_Normal.pdf). The posterior distribution of $u$ with a sample size of n has the following property:
 $$ \sigma_1^2=(\frac {1}{\sigma_u^2} + \frac {1}{\frac {\sigma_e^2}n})^{-1} $$
 $$ \mu_1=\sigma_1^2(\frac{\mu_u}{\sigma_u^2} +\frac {\bar{x}}{\frac {\sigma_e^2}{n}}) $$
 
 where $\mu_u=0$, and $\bar{x}$ is the average value of the n signals observed. Also note that we have ${\sigma_e^2}$ in the formula because $E[x_i | u] \sim N(u, \sigma_e)$.
 
-
+## Reference
+* [31 - Normal prior conjugate to normal likelihood - proof 1](https://www.youtube.com/watch?v=MUhsT0U_nxY)
+* [32 - Normal prior conjugate to normal likelihood - proof 2](https://www.youtube.com/watch?v=OGxHNPYLtko)
+* [33 - Normal prior conjugate to normal likelihood - intuition](https://www.youtube.com/watch?v=f3o9Crx3qx4)
+* [Bayesian Inference for the Normal Distribution](http://www.ams.sunysb.edu/~zhu/ams570/Bayesian_Normal.pdf)
