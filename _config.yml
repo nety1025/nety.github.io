@@ -1,6 +1,6 @@
 title: "My Notes"
 author: "Nety"
-description: "My personal notes on my study and research"
+description: "My personal notes on study and research"
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
